@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
 vector<int> manacher(string& t) {
     string s{'$'};
     for(char& c: t) s += string{'#', c};

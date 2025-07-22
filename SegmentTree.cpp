@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
 struct seg_tree{
     int n;
     vector<int> t;

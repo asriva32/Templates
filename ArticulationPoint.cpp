@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
 const int mxN = 2e5 + 5;
 vector<int> dfs_num(mxN, -1), dfs_low(mxN)
 vector<int> dfs_parent(mxN, -1), articulation_vertex(mxN);
