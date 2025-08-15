@@ -6,7 +6,7 @@ using namespace std;
 class HashedString {
   private:
     // change M and B if you want
-    static const long long M = (1long long << 61) - 1;
+    static const long long M = (1LL << 61) - 1;
     static const long long B;
 
     // pow[i] contains B^i % M
