@@ -4,11 +4,17 @@ using namespace std;
 
 
 class NT {
-    constexpr int mxN = 1e5;
+    int mxN;
     
-    vector<bool> is_prime(mxN+1, true);
-    vector<int> lp(mxN+1);
+    vector<bool> is_prime;
+    vector<int> lp;
     vector<int> pr;
+
+    NT(int N): mxN(N){
+        is_prime = vector<bool>(mxN + 1, true);
+        lp = vector<int>(mxN + 1);
+    }
+    
     void sieve(){
         is_prime[0] = is_prime[1] = false;
         for (int i = 2; i * i <= mxN; i++) {
