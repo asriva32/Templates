@@ -9,11 +9,11 @@ class Trie{
 
         Trie(): children(vector<Trie*>(26)), is_end(false){}
 
-        void insert(string &w);
-        bool search(string &w);
+        void insert(const string &w);
+        bool search(const string &w);
 };
 
-void Trie::insert(string &w){
+void Trie::insert(const string &w){
     Trie *node = this;
 
     for(char c: w){
@@ -25,7 +25,7 @@ void Trie::insert(string &w){
     node->is_end = true;
 }
 
-bool Trie::search(string &w){
+bool Trie::search(const string &w){
     Trie *node = this;
     for(char c: w){
         if(!node->children[c - 'a']){

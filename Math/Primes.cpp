@@ -26,7 +26,7 @@ class NT {
     }
     
     void lin_sieve(){
-        for (int i=2; i <= mxN; ++i) {
+        for (int i = 2; i <= mxN; ++i) {
             if (lp[i] == 0) {
                 lp[i] = i;
                 pr.push_back(i);

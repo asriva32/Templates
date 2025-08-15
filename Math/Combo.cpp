@@ -3,12 +3,12 @@
 using namespace std;
 
 class Combo {
-    constexpr int MAXN = 2e5;
-    constexpr int MOD = 998244353;
+    int MAXN;
+    int MOD;
     vector<long long> fac;
     vector<long long> inv;
 
-    Combo(): fac(MAXN + 1), inv(MAXN + 1){
+    Combo(int MAXN, int MOD): MAXN(MAXN), MOD(MOD), fac(MAXN + 1), inv(MAXN + 1){
         factorial();
         inverses();
     }

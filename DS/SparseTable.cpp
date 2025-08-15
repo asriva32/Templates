@@ -4,14 +4,13 @@ using namespace std;
 
 // floor(log2(MAX ARRAY SIZE))
 constexpr int K = 25; 
-constexpr int MAXN = 2e5 + 5;
 
 struct SparseTable{
     vector<vector<long long>> st;
     int N;
     SparseTable(vector<int> &a){
         N = a.size();
-        st = vector<vector<long long>>(K + 1, vector<long long>(MAXN));
+        st = vector<vector<long long>>(K + 1, vector<long long>(N + 1));
         for(int i = 0; i < N;i++){
             st[0][i] = a[i];
         }
