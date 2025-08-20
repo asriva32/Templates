@@ -2,7 +2,7 @@
 
 using namespace std;
 
-struct FenwickTree {
+class FenwickTree {
     vector<int> bit;
     int n;
 
@@ -11,7 +11,7 @@ struct FenwickTree {
         bit.assign(n, 0);
     }
 
-    FenwickTree(vector<int> const &a) : FenwickTree(a.size()) {
+    FenwickTree(vector<int> &a) : FenwickTree(a.size()) {
         for (int i = 0; i < (int)a.size(); i++)
             update(i, a[i]);
     }

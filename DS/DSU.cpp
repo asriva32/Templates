@@ -3,7 +3,17 @@
 using namespace std;
 
 class DSU{
-    private:
+    public:
+        vector<int> par;
+        vector<int> S;
+        DSU(int n) {
+            par.resize(n);
+            S.resize(n);
+            for (int i = 0; i < n; ++i) {
+                make_set(i);
+            }
+        }
+
         void make_set(int v) {
             par[v] = v;
             S[v] = 1;
@@ -24,20 +34,4 @@ class DSU{
                 S[a] += S[b];
             }
         }
-    public:
-        vector<int> par;
-        vector<int> S;
-        DSU(int n) {
-            par.resize(n);
-            S.resize(n);
-            for (int i = 0; i < n; ++i) {
-                make_set(i);
-            }
-        }
-
-        void make_set(int v);
-        int find_set(int v);
-        void union_sets(int a, int b);
 };
-
-

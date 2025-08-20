@@ -37,6 +37,10 @@ class SegmentTree{
         function<T(T, T)> merge;
         int N;
         
+        SegmentTree(int n, function<T(T, T)> merge): merge(merge), N(n){
+            t = vector<T>(4 * N);
+        }
+
         SegmentTree(vector<long long> &a, function<T(T, T)> merge): a(a), merge(merge), N((int)a.size()){
             t = vector<T>(4 * N);
         }
