@@ -9,7 +9,7 @@ class SegmentTree{
             return max(left, right);
         }
 
-        void update(int v, int tl, int tr, int pos, long long val){
+        void update(int v, int tl, int tr, int pos, T val){
             if(tl == tr){
                 t[v] = val;
             }else{
