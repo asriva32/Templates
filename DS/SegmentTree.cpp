@@ -5,6 +5,10 @@ using namespace std;
 template<typename T>
 class SegmentTree{
     private:
+        T merge(T &left, T &right){
+            return max(left, right);
+        }
+
         void update(int v, int tl, int tr, int pos, long long val){
             if(tl == tr){
                 t[v] = val;
@@ -21,7 +25,7 @@ class SegmentTree{
 
         T query(int v, int tl, int tr, int l, int r){
             if(l > r){
-                T def; // dependes on merge
+                T def = 0;
                 return def;
             }
             if(l == tl && r == tr){
@@ -33,15 +37,14 @@ class SegmentTree{
 
     public:
         vector<T> t;
-        vector<long long> a; // type could be anything
-        function<T(T, T)> merge;
+        vector<long long> a;
         int N;
         
-        SegmentTree(int n, function<T(T, T)> merge): merge(merge), N(n){
+        SegmentTree(int n): N(n){
             t = vector<T>(4 * N);
         }
 
-        SegmentTree(vector<long long> &a, function<T(T, T)> merge): a(a), merge(merge), N((int)a.size()){
+        SegmentTree(vector<long long> &a): a(a), N((int)a.size()){
             t = vector<T>(4 * N);
         }
 
@@ -53,5 +56,8 @@ class SegmentTree{
         }
         T query(int l, int r){
             return query(1, 0, N - 1, l, r);
+        }
+        T merge(T &left, T &right){
+            return merge(left, right);
         }
 };
